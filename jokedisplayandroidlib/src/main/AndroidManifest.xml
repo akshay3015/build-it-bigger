@@ -8,6 +8,8 @@
                  android:supportsRtl="true"
     >
 
+        <activity android:name=".ActivityJokesDisplay"/>
+
     </application>
 
 </manifest>

@@ -9,8 +9,8 @@ public class JokesBean {
 
     private JokeProvider mJokeProvider;
 
-    public JokesBean(JokeProvider jokeProvider) {
-        mJokeProvider = jokeProvider;
+    public JokesBean() {
+        mJokeProvider = new JokeProvider();
     }
 
     public String getJoke(){

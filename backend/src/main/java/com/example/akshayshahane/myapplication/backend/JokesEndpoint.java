@@ -29,8 +29,8 @@ public class JokesEndpoint {
     /**
      * A simple endpoint method that takes a name and says Hi back
      */
-    @ApiMethod(name = "getJoke")
-    public JokesBean getJoke(JokesBean jokesBean) {
+    @ApiMethod(name = "fetchJoke")
+    public JokesBean fetchJoke(JokesBean jokesBean) {
         return jokesBean;
     }
 
