@@ -9,9 +9,7 @@ import android.widget.ProgressBar;
 
 import com.example.akshayshahane.myapplication.backend.jokesApi.JokesApi;
 import com.example.akshayshahane.myapplication.backend.jokesApi.model.JokesBean;
-import com.google.android.gms.ads.AdListener;
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.InterstitialAd;
+
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 
@@ -21,7 +19,6 @@ import co.akshay.jokedisplayandroidlib.*;
 
 /**
  * Created by akshayshahane on 27/08/17.
- * Reference : https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/master/HelloEndpoints
  */
 
 public class GoogleEndPointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, String> {
@@ -32,7 +29,7 @@ public class GoogleEndPointsAsyncTask extends AsyncTask<Pair<Context, String>, V
     private Context mContext;
     private ProgressBar mProgressBar;
     private String strJoke;
-    private InterstitialAd mInterstitialAd;
+
 
     public GoogleEndPointsAsyncTask(Context context, ProgressBar progressBar) {
         mContext = context;
@@ -69,40 +66,12 @@ public class GoogleEndPointsAsyncTask extends AsyncTask<Pair<Context, String>, V
     @Override
     protected void onPostExecute(String s) {
         super.onPostExecute(s);
-
+        if (mProgressBar != null) {
+            mProgressBar.setVisibility(View.GONE);
+        }
         strJoke = s;
+        startJokeDisplayActivity(strJoke);
 
-        mInterstitialAd = new InterstitialAd(mContext);
-        mInterstitialAd.setAdUnitId(BuildConfig.AdId);
-        mInterstitialAd.setAdListener(new AdListener() {
-            @Override
-            public void onAdLoaded() {
-                super.onAdLoaded();
-                if (mProgressBar != null) {
-                    mProgressBar.setVisibility(View.GONE);
-                }
-                mInterstitialAd.show();
-            }
-
-            @Override
-            public void onAdFailedToLoad(int errorCode) {
-                super.onAdFailedToLoad(errorCode);
-                if (mProgressBar != null) {
-                    mProgressBar.setVisibility(View.GONE);
-                }
-                startJokeDisplayActivity(strJoke);
-            }
-
-            @Override
-            public void onAdClosed() {
-                startJokeDisplayActivity(strJoke);
-            }
-        });
-        AdRequest ar = new AdRequest
-                .Builder()
-                .addTestDevice("2C56765C2241F8D1EA67A240BDF6CDE8")
-                .build();
-        mInterstitialAd.loadAd(ar);
 
 
     }

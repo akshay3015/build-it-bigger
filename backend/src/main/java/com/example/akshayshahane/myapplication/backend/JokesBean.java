@@ -4,6 +4,8 @@ import com.example.JokeProvider;
 
 /**
  * The object model for the data we are sending through endpoints
+ *  Reference : https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/master/HelloEndpoints
+
  */
 public class JokesBean {
 

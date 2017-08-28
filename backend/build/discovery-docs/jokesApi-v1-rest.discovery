@@ -1,6 +1,6 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"RnkXbyw9us4_w3H-FU6An0C4oYs/mygBw07GTXb7u-t4p9mZ0n9Ikxk\"",
+ "etag": "\"RnkXbyw9us4_w3H-FU6An0C4oYs/P48i1RBhV_RBDTcXhl4XzQFl-Jw\"",
  "discoveryVersion": "v1",
  "id": "jokesApi:v1",
  "name": "jokesApi",
@@ -13,9 +13,9 @@
   "x32": "https://www.gstatic.com/images/branding/product/1x/googleg_32dp.png"
  },
  "protocol": "rest",
- "baseUrl": "https://myApplicationId.appspot.com/_ah/api/jokesApi/v1/",
+ "baseUrl": "https://built-it-bigger-178119.appspot.com/_ah/api/jokesApi/v1/",
  "basePath": "/_ah/api/jokesApi/v1/",
- "rootUrl": "https://myApplicationId.appspot.com/_ah/api/",
+ "rootUrl": "https://built-it-bigger-178119.appspot.com/_ah/api/",
  "servicePath": "jokesApi/v1/",
  "batchPath": "batch",
  "parameters": {

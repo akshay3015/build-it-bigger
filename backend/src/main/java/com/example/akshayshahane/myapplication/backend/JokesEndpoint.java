@@ -14,6 +14,7 @@ import javax.inject.Named;
 
 /**
  * An endpoint class we are exposing
+ *   Reference : https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/master/HelloEndpoints
  */
 @Api(
         name = "jokesApi",
